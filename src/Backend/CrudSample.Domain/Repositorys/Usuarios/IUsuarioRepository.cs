@@ -4,7 +4,8 @@ namespace CrudSample.Domain.Repository.Usuarios
 {
     public interface IUsuarioRepository
     {
-        Task CadastrarAsync(Usuario usuario);
-        Task<Usuario> AutenticarAsync(string nome, string senha);
+        Task CadastrarAsync(Usuario? usuario);
+        Task<Usuario?> AutenticarAsync(string nome, string senha);
+        Task<bool> ContemAlgumUsuarioAsync();
     }
 }

@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 Database.CriarDatabase(builder.Configuration.ObterStringConexao(), builder.Configuration.ObterNomeDatabase());
 
 builder.Services.AddFluentMigrator(builder.Configuration);
+builder.Services.AddDependenciasInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

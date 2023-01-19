@@ -34,7 +34,7 @@ namespace CrudSample.Infrastructure.Data.Migrations.Versoes
                 .WithColumn("cnpj").AsString(20).Unique()
                 .WithColumn("telefone").AsString(15)
                 .WithColumn("criado_em").AsDateTime().WithDefaultValue(DateTime.Now)
-                .WithColumn("AtualizadoEm").AsDateTime()
+                .WithColumn("atualizado_em").AsDateTime()
                 .WithColumn("endereco_id").AsInt32().ForeignKey("endereco","id");
         }
     }
