@@ -14,4 +14,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CrudSample.Infrastructure\CrudSample.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
