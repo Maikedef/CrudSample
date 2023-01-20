@@ -5,7 +5,6 @@ using CrudSample.Infrastructure.Data.Repositorys;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Primitives;
 
 namespace CrudSample.Infrastructure.Extensions
 {
@@ -33,8 +32,9 @@ namespace CrudSample.Infrastructure.Extensions
             {
                 dbContextOptions.UseMySql(stringConexao, ServerVersion.AutoDetect(stringConexao));
             });
-            services.AddScoped<IUsuarioRepository, UsuarioRepository>()
-                .AddScoped<IUnityOfWork, UnityOfWork>();
+
+            services.AddScoped<IUnityOfWork, UnityOfWork>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             
         }
     }

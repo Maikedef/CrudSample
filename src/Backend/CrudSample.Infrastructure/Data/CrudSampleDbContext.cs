@@ -1,11 +1,7 @@
 ﻿using CrudSample.Domain.Entities.Empresas;
 using CrudSample.Domain.Entities.Usuarios;
+using CrudSample.Infrastructure.Data.Mapping.Usuarios;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrudSample.Infrastructure.Data
 {
@@ -18,6 +14,8 @@ namespace CrudSample.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CrudSampleDbContext).Assembly);
+
+            modelBuilder.Entity<Usuario>(new UsuarioMapping().Configure);
         }
     }
 }
