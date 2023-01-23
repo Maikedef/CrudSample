@@ -1,6 +1,6 @@
 ﻿using CrudSample.Domain.Entities.Usuarios;
 
-namespace CrudSample.Domain.Repository.Usuarios
+namespace CrudSample.Domain.Repositories.Usuarios
 {
     public interface IUsuarioRepository
     {

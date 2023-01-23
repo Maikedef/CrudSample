@@ -1,9 +1,9 @@
-﻿using CrudSample.Domain.Repository.Empresas;
-using CrudSample.Domain.Repository.Usuarios;
-using CrudSample.Domain.Repositorys.UoW;
+﻿using CrudSample.Domain.Repositories.Empresas;
+using CrudSample.Domain.Repositories.Usuarios;
+using CrudSample.Domain.Repositories.UoW;
 using CrudSample.Infrastructure.Data;
-using CrudSample.Infrastructure.Data.Repositorys.Empresas;
-using CrudSample.Infrastructure.Data.Repositorys.Usuarios;
+using CrudSample.Infrastructure.Data.Repositories.Empresas;
+using CrudSample.Infrastructure.Data.Repositories.Usuarios;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

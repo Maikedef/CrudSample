@@ -1,6 +1,6 @@
 ﻿using CrudSample.Application.Interfaces.Usuarios;
 using CrudSample.Application.ViewsModels.Usuarios;
-using CrudSample.Domain.Repository.Usuarios;
+using CrudSample.Domain.Repositories.Usuarios;
 using CrudSample.Domain.Entities.Usuarios;
 using CrudSample.Application.Cryptography;
 using CrudSample.Application.Services.Token;
