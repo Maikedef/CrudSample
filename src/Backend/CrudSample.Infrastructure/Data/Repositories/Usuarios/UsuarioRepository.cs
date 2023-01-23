@@ -1,9 +1,9 @@
 ﻿using CrudSample.Domain.Entities.Usuarios;
-using CrudSample.Domain.Repository.Usuarios;
-using CrudSample.Domain.Repositorys.UoW;
+using CrudSample.Domain.Repositories.Usuarios;
+using CrudSample.Domain.Repositories.UoW;
 using Microsoft.EntityFrameworkCore;
 
-namespace CrudSample.Infrastructure.Data.Repositorys.Usuarios
+namespace CrudSample.Infrastructure.Data.Repositories.Usuarios
 {
     public class UsuarioRepository : IUsuarioRepository
     {

@@ -1,7 +1,7 @@
 ﻿using CrudSample.Domain.Entities.Empresas;
 using System.Collections.Generic;
 
-namespace CrudSample.Domain.Repository.Empresas
+namespace CrudSample.Domain.Repositories.Empresas
 {
     public interface IEmpresaRepository
     {

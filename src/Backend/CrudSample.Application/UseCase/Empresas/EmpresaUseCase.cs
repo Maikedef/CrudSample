@@ -2,7 +2,7 @@
 using CrudSample.Application.Interfaces.Usuarios;
 using CrudSample.Application.ViewsModels.Empresas;
 using CrudSample.Domain.Entities.Empresas;
-using CrudSample.Domain.Repository.Empresas;
+using CrudSample.Domain.Repositories.Empresas;
 
 namespace CrudSample.Application.UseCase.Empresas
 {

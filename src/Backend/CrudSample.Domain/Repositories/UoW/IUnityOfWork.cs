@@ -1,4 +1,4 @@
-﻿namespace CrudSample.Domain.Repositorys.UoW
+﻿namespace CrudSample.Domain.Repositories.UoW
 {
     public interface IUnityOfWork
     {

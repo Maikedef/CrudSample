@@ -1,9 +1,9 @@
 ﻿using CrudSample.Domain.Entities.Empresas;
-using CrudSample.Domain.Repository.Empresas;
-using CrudSample.Domain.Repositorys.UoW;
+using CrudSample.Domain.Repositories.Empresas;
+using CrudSample.Domain.Repositories.UoW;
 using Microsoft.EntityFrameworkCore;
 
-namespace CrudSample.Infrastructure.Data.Repositorys.Empresas
+namespace CrudSample.Infrastructure.Data.Repositories.Empresas
 {
     public class EmpresaRepository : IEmpresaRepository
     {

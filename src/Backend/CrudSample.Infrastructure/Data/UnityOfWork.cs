@@ -1,4 +1,4 @@
-﻿using CrudSample.Domain.Repositorys.UoW;
+﻿using CrudSample.Domain.Repositories.UoW;
 
 namespace CrudSample.Infrastructure.Data
 {
