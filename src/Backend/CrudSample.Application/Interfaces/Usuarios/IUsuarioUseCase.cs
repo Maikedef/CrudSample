@@ -6,5 +6,6 @@ namespace CrudSample.Application.Interfaces.Usuarios
     {
         Task<RespostaUsuarioAutenticadoDto> CadastrarAsync(RegistrarUsuarioDto? usuarioDto);
         Task<RespostaUsuarioAutenticadoDto> AutenticarAsync(AutenticarUsuarioDto autenticarUsuarioDto);
+        Task<bool> ContemUsuarioCadastradoAsync();
     }
 }

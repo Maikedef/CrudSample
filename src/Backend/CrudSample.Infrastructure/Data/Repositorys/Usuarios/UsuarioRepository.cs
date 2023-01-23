@@ -3,7 +3,7 @@ using CrudSample.Domain.Repository.Usuarios;
 using CrudSample.Domain.Repositorys.UoW;
 using Microsoft.EntityFrameworkCore;
 
-namespace CrudSample.Infrastructure.Data.Repositorys
+namespace CrudSample.Infrastructure.Data.Repositorys.Usuarios
 {
     public class UsuarioRepository : IUsuarioRepository
     {
@@ -27,7 +27,7 @@ namespace CrudSample.Infrastructure.Data.Repositorys
             await _unityOfWork.CommitAsync();
         }
 
-        public async Task<bool> ContemAlgumUsuarioAsync()
+        public async Task<bool> ContemUsuarioCadastradoAsync()
         {
             return await _context.Usuarios.AnyAsync();
         }

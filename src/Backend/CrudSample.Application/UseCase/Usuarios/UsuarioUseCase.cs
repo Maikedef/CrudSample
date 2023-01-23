@@ -4,9 +4,9 @@ using CrudSample.Domain.Repository.Usuarios;
 using CrudSample.Domain.Entities.Usuarios;
 using CrudSample.Application.Cryptography;
 using CrudSample.Application.Services.Token;
-using AutoMapper; 
+using AutoMapper;
 
-namespace CrudSample.Application.UseCase
+namespace CrudSample.Application.UseCase.Usuarios
 {
     public class UsuarioUseCase : IUsuarioUseCase
     {
@@ -16,7 +16,7 @@ namespace CrudSample.Application.UseCase
         private readonly TokenService _tokenService;
 
         public UsuarioUseCase(
-            IUsuarioRepository usuarioRepository, 
+            IUsuarioRepository usuarioRepository,
             EncryptService encrypt,
             IMapper mapper,
             TokenService tokenService)
@@ -35,7 +35,7 @@ namespace CrudSample.Application.UseCase
 
             var usuario = await _usuarioRepository.AutenticarAsync(autenticarUsuarioDto.Nome, senhaCriptografada);
 
-            if(usuario != null)
+            if (usuario != null)
             {
                 string token = _tokenService.GerarToken(usuario);
                 string tokenType = _tokenService.TipoToken;
@@ -62,6 +62,11 @@ namespace CrudSample.Application.UseCase
                 Token = token,
                 TokenType = tokenType
             };
+        }
+
+        public Task<bool> ContemUsuarioCadastradoAsync()
+        {
+            return _usuarioRepository.ContemUsuarioCadastradoAsync();
         }
     }
 }

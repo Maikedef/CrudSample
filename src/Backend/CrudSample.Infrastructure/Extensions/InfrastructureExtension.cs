@@ -1,7 +1,9 @@
-﻿using CrudSample.Domain.Repository.Usuarios;
+﻿using CrudSample.Domain.Repository.Empresas;
+using CrudSample.Domain.Repository.Usuarios;
 using CrudSample.Domain.Repositorys.UoW;
 using CrudSample.Infrastructure.Data;
-using CrudSample.Infrastructure.Data.Repositorys;
+using CrudSample.Infrastructure.Data.Repositorys.Empresas;
+using CrudSample.Infrastructure.Data.Repositorys.Usuarios;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,15 +29,20 @@ namespace CrudSample.Infrastructure.Extensions
 
         public static void AddDependenciasInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            string stringConexao = configuration.ObterStringConexaoCompleta();
-            services.AddDbContext<CrudSampleDbContext>(dbContextOptions =>
-            {
-                dbContextOptions.UseMySql(stringConexao, ServerVersion.AutoDetect(stringConexao));
-            });
 
+            bool.TryParse(configuration.GetRequiredSection("Configuracoes:DbInMemory")?.Value, out bool dbInMemory);
+            if (!dbInMemory)
+            {
+                string stringConexao = configuration.ObterStringConexaoCompleta();
+                services.AddDbContext<CrudSampleDbContext>(dbContextOptions =>
+                {
+                    dbContextOptions.UseMySql(stringConexao, ServerVersion.AutoDetect(stringConexao));
+                });
+            }
+        
             services.AddScoped<IUnityOfWork, UnityOfWork>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            
+            services.AddScoped<IEmpresaRepository, EmpresaRepository>();
         }
     }
 }

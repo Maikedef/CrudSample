@@ -1,5 +1,6 @@
 ﻿using CrudSample.Domain.Entities.Empresas;
 using CrudSample.Domain.Entities.Usuarios;
+using CrudSample.Infrastructure.Data.Mapping.Empresas;
 using CrudSample.Infrastructure.Data.Mapping.Usuarios;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,7 @@ namespace CrudSample.Infrastructure.Data
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CrudSampleDbContext).Assembly);
 
             modelBuilder.Entity<Usuario>(new UsuarioMapping().Configure);
+            modelBuilder.Entity<Empresa>(new EmpresaMapping().Configure);
         }
     }
 }
